@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: auth-service
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: auth-service, civiclink.io/domain: identity-access }
+data:
+  LOG_LEVEL: info
+  PORT: "50020"

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ivr-service
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: ivr-service, civiclink.io/domain: notifications }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50325, targetPort: 50325 }]
+  selector: { app.kubernetes.io/name: ivr-service }

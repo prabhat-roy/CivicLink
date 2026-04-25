@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: exam-board
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: exam-board, civiclink.io/domain: education }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50182, targetPort: 50182 }]
+  selector: { app.kubernetes.io/name: exam-board }

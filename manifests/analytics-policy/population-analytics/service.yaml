@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: population-analytics
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: population-analytics, civiclink.io/domain: analytics-policy }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50300, targetPort: 50300 }]
+  selector: { app.kubernetes.io/name: population-analytics }

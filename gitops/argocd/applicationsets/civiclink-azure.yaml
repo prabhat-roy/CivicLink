@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: civiclink-azure
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/prabhat-roy/CivicLink.git
+        revision: HEAD
+        directories:
+          - path: helm/charts/*
+  template:
+    metadata:
+      name: '{{path.basename}}-azure'
+      labels:
+        cloud: azure
+        civiclink.io/managed-by: argocd
+    spec:
+      project: civiclink
+      source:
+        repoURL: https://github.com/prabhat-roy/CivicLink.git
+        targetRevision: HEAD
+        path: '{{path}}'
+        helm:
+          valueFiles:
+            - values.yaml
+            - values-azure.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: civiclink
+      syncPolicy:
+        automated: { prune: true, selfHeal: true }
+        syncOptions:
+          - CreateNamespace=true
+          - ServerSideApply=true

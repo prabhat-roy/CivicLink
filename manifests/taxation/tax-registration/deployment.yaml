@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tax-registration
+  namespace: civiclink
+  labels:
+    app.kubernetes.io/name: tax-registration
+    app.kubernetes.io/part-of: civiclink
+    civiclink.io/domain: taxation
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: tax-registration } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: tax-registration, civiclink.io/domain: taxation }
+    spec:
+      serviceAccountName: tax-registration
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: tax-registration
+          image: harbor.civiclink.internal/civiclink/tax-registration:latest
+          ports: [{ containerPort: 50120, name: http }]
+          envFrom: [{ configMapRef: { name: tax-registration } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50120 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50120 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

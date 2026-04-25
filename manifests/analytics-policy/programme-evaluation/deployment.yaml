@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: programme-evaluation
+  namespace: civiclink
+  labels:
+    app.kubernetes.io/name: programme-evaluation
+    app.kubernetes.io/part-of: civiclink
+    civiclink.io/domain: analytics-policy
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: programme-evaluation } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: programme-evaluation, civiclink.io/domain: analytics-policy }
+    spec:
+      serviceAccountName: programme-evaluation
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: programme-evaluation
+          image: harbor.civiclink.internal/civiclink/programme-evaluation:latest
+          ports: [{ containerPort: 50301, name: http }]
+          envFrom: [{ configMapRef: { name: programme-evaluation } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50301 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50301 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

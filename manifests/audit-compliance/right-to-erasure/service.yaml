@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: right-to-erasure
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: right-to-erasure, civiclink.io/domain: audit-compliance }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50342, targetPort: 50342 }]
+  selector: { app.kubernetes.io/name: right-to-erasure }

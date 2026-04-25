@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: data-retention
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: data-retention, civiclink.io/domain: audit-compliance }
+data:
+  LOG_LEVEL: info
+  PORT: "50341"

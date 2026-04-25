@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: mfa-service
+  namespace: civiclink
+spec:
+  replicas: 3
+  strategy:
+    canary:
+      steps:
+        - setWeight: 10
+        - pause: { duration: 5m }
+        - analysis:
+            templates: [{ templateName: civiclink-canary-analysis }]
+            args:
+              - { name: service-name, value: mfa-service }
+        - setWeight: 25
+        - pause: { duration: 5m }
+        - setWeight: 50
+        - pause: { duration: 5m }
+        - setWeight: 100
+  selector:
+    matchLabels: { app.kubernetes.io/name: mfa-service }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: mfa-service }
+    spec:
+      containers:
+        - name: mfa-service
+          image: harbor.civiclink.internal/civiclink/
+          ports: [{ containerPort: 50023 }]

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: e-receipt-service
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: e-receipt-service, civiclink.io/domain: payments-finance }
+data:
+  LOG_LEVEL: info
+  PORT: "50243"

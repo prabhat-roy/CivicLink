@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: title-service
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: title-service, civiclink.io/domain: land-property }
+data:
+  LOG_LEVEL: info
+  PORT: "50103"

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: benefit-service
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: benefit-service, civiclink.io/domain: social-welfare }
+data:
+  LOG_LEVEL: info
+  PORT: "50140"

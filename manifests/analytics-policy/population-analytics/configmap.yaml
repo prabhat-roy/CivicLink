@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: population-analytics
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: population-analytics, civiclink.io/domain: analytics-policy }
+data:
+  LOG_LEVEL: info
+  PORT: "50300"

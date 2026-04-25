@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exam-board
+  namespace: civiclink
+  labels:
+    app.kubernetes.io/name: exam-board
+    app.kubernetes.io/part-of: civiclink
+    civiclink.io/domain: education
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: exam-board } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: exam-board, civiclink.io/domain: education }
+    spec:
+      serviceAccountName: exam-board
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: exam-board
+          image: harbor.civiclink.internal/civiclink/exam-board:latest
+          ports: [{ containerPort: 50182, name: http }]
+          envFrom: [{ configMapRef: { name: exam-board } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50182 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50182 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

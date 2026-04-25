@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: federated-query
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: federated-query, civiclink.io/domain: inter-agency }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50283, targetPort: 50283 }]
+  selector: { app.kubernetes.io/name: federated-query }

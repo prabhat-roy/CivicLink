@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: graphql-gateway
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: graphql-gateway, civiclink.io/domain: platform }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50004, targetPort: 50004 }]
+  selector: { app.kubernetes.io/name: graphql-gateway }

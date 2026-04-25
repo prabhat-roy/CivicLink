@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: deduplication-service
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: deduplication-service, civiclink.io/domain: citizen-identity }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50043, targetPort: 50043 }]
+  selector: { app.kubernetes.io/name: deduplication-service }

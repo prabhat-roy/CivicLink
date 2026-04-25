@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: right-to-erasure
+  namespace: civiclink
+  labels:
+    app.kubernetes.io/name: right-to-erasure
+    app.kubernetes.io/part-of: civiclink
+    civiclink.io/domain: audit-compliance
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: right-to-erasure } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: right-to-erasure, civiclink.io/domain: audit-compliance }
+    spec:
+      serviceAccountName: right-to-erasure
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: right-to-erasure
+          image: harbor.civiclink.internal/civiclink/right-to-erasure:latest
+          ports: [{ containerPort: 50342, name: http }]
+          envFrom: [{ configMapRef: { name: right-to-erasure } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50342 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50342 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: national-id-service
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: national-id-service, civiclink.io/domain: citizen-identity }
+data:
+  LOG_LEVEL: info
+  PORT: "50040"

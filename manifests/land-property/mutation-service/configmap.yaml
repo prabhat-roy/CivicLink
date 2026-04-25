@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mutation-service
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: mutation-service, civiclink.io/domain: land-property }
+data:
+  LOG_LEVEL: info
+  PORT: "50102"

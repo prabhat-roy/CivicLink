@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inspection-scheduler
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: inspection-scheduler, civiclink.io/domain: permits-licensing }
+data:
+  LOG_LEVEL: info
+  PORT: "50083"

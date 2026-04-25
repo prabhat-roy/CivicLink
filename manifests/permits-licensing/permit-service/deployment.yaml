@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: permit-service
+  namespace: civiclink
+  labels:
+    app.kubernetes.io/name: permit-service
+    app.kubernetes.io/part-of: civiclink
+    civiclink.io/domain: permits-licensing
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: permit-service } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: permit-service, civiclink.io/domain: permits-licensing }
+    spec:
+      serviceAccountName: permit-service
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: permit-service
+          image: harbor.civiclink.internal/civiclink/permit-service:latest
+          ports: [{ containerPort: 50080, name: http }]
+          envFrom: [{ configMapRef: { name: permit-service } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50080 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50080 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

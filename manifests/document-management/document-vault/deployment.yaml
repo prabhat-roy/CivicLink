@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: document-vault
+  namespace: civiclink
+  labels:
+    app.kubernetes.io/name: document-vault
+    app.kubernetes.io/part-of: civiclink
+    civiclink.io/domain: document-management
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: document-vault } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: document-vault, civiclink.io/domain: document-management }
+    spec:
+      serviceAccountName: document-vault
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: document-vault
+          image: harbor.civiclink.internal/civiclink/document-vault:latest
+          ports: [{ containerPort: 50260, name: http }]
+          envFrom: [{ configMapRef: { name: document-vault } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50260 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50260 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

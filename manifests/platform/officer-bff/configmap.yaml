@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: officer-bff
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: officer-bff, civiclink.io/domain: platform }
+data:
+  LOG_LEVEL: info
+  PORT: "50002"

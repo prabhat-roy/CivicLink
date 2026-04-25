@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bi-service
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: bi-service, civiclink.io/domain: analytics-policy }
+data:
+  LOG_LEVEL: info
+  PORT: "50303"

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: federated-query
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: federated-query, civiclink.io/domain: inter-agency }
+data:
+  LOG_LEVEL: info
+  PORT: "50283"

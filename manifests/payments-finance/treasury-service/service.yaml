@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: treasury-service
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: treasury-service, civiclink.io/domain: payments-finance }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50241, targetPort: 50241 }]
+  selector: { app.kubernetes.io/name: treasury-service }

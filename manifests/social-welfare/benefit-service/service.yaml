@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: benefit-service
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: benefit-service, civiclink.io/domain: social-welfare }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50140, targetPort: 50140 }]
+  selector: { app.kubernetes.io/name: benefit-service }

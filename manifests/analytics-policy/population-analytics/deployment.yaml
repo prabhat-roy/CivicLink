@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: population-analytics
+  namespace: civiclink
+  labels:
+    app.kubernetes.io/name: population-analytics
+    app.kubernetes.io/part-of: civiclink
+    civiclink.io/domain: analytics-policy
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: population-analytics } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: population-analytics, civiclink.io/domain: analytics-policy }
+    spec:
+      serviceAccountName: population-analytics
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: population-analytics
+          image: harbor.civiclink.internal/civiclink/population-analytics:latest
+          ports: [{ containerPort: 50300, name: http }]
+          envFrom: [{ configMapRef: { name: population-analytics } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50300 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50300 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

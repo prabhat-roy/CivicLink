@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ivr-service
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: ivr-service, civiclink.io/domain: notifications }
+data:
+  LOG_LEVEL: info
+  PORT: "50325"

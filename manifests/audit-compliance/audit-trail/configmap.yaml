@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: audit-trail
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: audit-trail, civiclink.io/domain: audit-compliance }
+data:
+  LOG_LEVEL: info
+  PORT: "50340"

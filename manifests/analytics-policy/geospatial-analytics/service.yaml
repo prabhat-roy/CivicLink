@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: geospatial-analytics
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: geospatial-analytics, civiclink.io/domain: analytics-policy }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50302, targetPort: 50302 }]
+  selector: { app.kubernetes.io/name: geospatial-analytics }

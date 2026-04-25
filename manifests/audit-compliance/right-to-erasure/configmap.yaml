@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: right-to-erasure
+  namespace: civiclink
+  labels: { app.kubernetes.io/name: right-to-erasure, civiclink.io/domain: audit-compliance }
+data:
+  LOG_LEVEL: info
+  PORT: "50342"
