@@ -1,0 +1,7 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata: { name: civiclink-jwt, namespace: civiclink }
+plugin: jwt
+config:
+  uri_param_names: [jwt]
+  cookie_names: [jwt]

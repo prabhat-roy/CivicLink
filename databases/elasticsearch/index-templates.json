@@ -1,0 +1,16 @@
+{
+  "index_patterns": ["civiclink-grievance-*"],
+  "template": {
+    "settings": { "number_of_shards": 3, "number_of_replicas": 2 },
+    "mappings": {
+      "properties": {
+        "grievance_id":  { "type": "keyword" },
+        "complainant":   { "type": "keyword" },
+        "category":      { "type": "keyword" },
+        "description":   { "type": "text", "analyzer": "standard" },
+        "status":        { "type": "keyword" },
+        "filed_at":      { "type": "date" }
+      }
+    }
+  }
+}

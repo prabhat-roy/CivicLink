@@ -1,0 +1,10 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata: { name: auth-service-pod-kill, namespace: chaos-testing }
+spec:
+  action: pod-kill
+  mode: one
+  selector:
+    namespaces: [civiclink]
+    labelSelectors: { app.kubernetes.io/name: auth-service }
+  duration: "30s"

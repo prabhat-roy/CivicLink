@@ -1,0 +1,23 @@
+config:
+  target: "https://api.civiclink.gov"
+  phases:
+    - { duration: 60,  arrivalRate: 5,   name: warmup }
+    - { duration: 300, arrivalRate: 50,  name: ramp }
+    - { duration: 600, arrivalRate: 200, name: sustained }
+  defaults:
+    headers:
+      Authorization: "Bearer {{ token }}"
+  plugins:
+    publish-metrics:
+      - { type: prometheus-pushgateway, pushgateway: http://prometheus-pushgateway:9091 }
+
+scenarios:
+  - name: citizen-browse-services
+    flow:
+      - get: { url: "/v1/services/catalogue" }
+      - get: { url: "/v1/services/{{ $randomString() }}" }
+  - name: file-grievance
+    flow:
+      - post:
+          url: "/v1/grievance"
+          json: { category: "property-tax", description: "automated load test" }

@@ -1,0 +1,20 @@
+extends: ["spectral:oas", "spectral:asyncapi"]
+rules:
+  oas3-api-servers: error
+  operation-tag-defined: error
+  operation-operationId: error
+  operation-success-response: error
+  civiclink-error-schema:
+    description: 4xx and 5xx responses must reference components/schemas/Error
+    severity: error
+    given: $.paths[*][*].responses[?(@property.match(/^[45]/))].content.application/json
+    then:
+      field: schema.$ref
+      function: pattern
+      functionOptions: { match: "^#/components/schemas/Error$" }
+  civiclink-pii-no-raw-nid:
+    description: National ID fields must use the tokenised CitizenIdRef, never raw IDs.
+    severity: error
+    given: $..properties[?(@property == 'national_id')]
+    then:
+      function: falsy

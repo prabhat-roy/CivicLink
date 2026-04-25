@@ -1,0 +1,35 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: civil-registration-birth-registered
+  namespace: kafka
+  labels: { strimzi.io/cluster: civiclink-kafka }
+spec:
+  partitions: 12
+  replicas: 3
+  config:
+    retention.ms: 2592000000
+    compression.type: zstd
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: audit-compliance-action-recorded
+  namespace: kafka
+  labels: { strimzi.io/cluster: civiclink-kafka }
+spec:
+  partitions: 24
+  replicas: 3
+  config:
+    retention.ms: 220752000000
+    compression.type: zstd
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: inter-agency-consent-granted
+  namespace: kafka
+  labels: { strimzi.io/cluster: civiclink-kafka }
+spec:
+  partitions: 6
+  replicas: 3

@@ -1,0 +1,21 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: Workflow
+metadata: { name: civiclink-game-day, namespace: chaos-testing }
+spec:
+  entry: serial
+  templates:
+    - name: serial
+      templateType: Serial
+      children: [auth-pod-kill, inter-agency-delay, postgres-cpu-stress]
+    - name: auth-pod-kill
+      templateType: PodChaos
+      embedChaos:
+        podChaos: { action: pod-kill, mode: one, selector: { labelSelectors: { app.kubernetes.io/name: auth-service } } }
+    - name: inter-agency-delay
+      templateType: NetworkChaos
+      embedChaos:
+        networkChaos: { action: delay, mode: all, selector: { labelSelectors: { app.kubernetes.io/name: data-exchange-gateway } }, delay: { latency: "500ms" } }
+    - name: postgres-cpu-stress
+      templateType: StressChaos
+      embedChaos:
+        stressChaos: { stressors: { cpu: { workers: 4, load: 80 } }, mode: one, selector: { labelSelectors: { app: postgres } } }

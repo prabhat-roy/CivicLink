@@ -1,0 +1,6 @@
+openlineage:
+  enabled: true
+  transport:
+    type: http
+    url: http://marquez.observability:5000
+  namespace: civiclink-dbt

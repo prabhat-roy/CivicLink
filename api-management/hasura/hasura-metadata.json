@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "sources": [
+    {
+      "name": "civiclink",
+      "kind": "postgres",
+      "tables": [
+        {
+          "table": { "schema": "public", "name": "citizen_profile" },
+          "select_permissions": [
+            {
+              "role": "officer",
+              "permission": {
+                "columns": ["id","nid_token","full_name","dob"],
+                "filter": {},
+                "limit": 100
+              }
+            }
+          ]
+        }
+      ],
+      "configuration": {
+        "connection_info": {
+          "database_url": { "from_env": "HASURA_GRAPHQL_DATABASE_URL" },
+          "isolation_level": "read-committed",
+          "use_prepared_statements": true
+        }
+      }
+    }
+  ]
+}

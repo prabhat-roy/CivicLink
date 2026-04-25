@@ -1,0 +1,20 @@
+{
+  "name": "civiclink-civil-registration-postgres",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "database.hostname": "${POSTGRES_HOST}",
+    "database.port": "5432",
+    "database.user": "${POSTGRES_USER}",
+    "database.password": "${POSTGRES_PASSWORD}",
+    "database.dbname": "civiclink",
+    "topic.prefix": "civil-registration",
+    "publication.name": "civic_pub",
+    "slot.name": "civic_slot",
+    "snapshot.mode": "exported",
+    "transforms": "unwrap,pii",
+    "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+    "transforms.pii.type": "org.apache.kafka.connect.transforms.MaskField$Value",
+    "transforms.pii.fields": "national_id,phone"
+  }
+}

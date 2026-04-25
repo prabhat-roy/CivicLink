@@ -1,0 +1,2 @@
+identity: { trustDomain: civiclink.internal }
+proxyInjector: { ignoreInboundPorts: ["4191"] }

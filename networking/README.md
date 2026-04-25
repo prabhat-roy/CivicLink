@@ -1,6 +1,9 @@
 # Networking — CivicLink
 
-Service mesh + edge — Istio, Linkerd, Cilium, Traefik, Kong, Consul, NGINX.
-
-> Skeleton placeholder. Content will be added as the project takes shape.
-> See [../README.md](../README.md) for the CivicLink project overview.
+| Layer | Tool | Role |
+|---|---|---|
+| Edge   | Traefik   | Public TLS termination + rate limiting |
+| Mesh   | Istio     | mTLS STRICT, AuthorizationPolicy default-deny, retries |
+| CNI    | Cilium    | eBPF L3/L4, cross-domain BFF-only ingress |
+| API GW | Kong      | Optional JWT/OIDC plugin layer for partner APIs |
+| Linkerd | Linkerd  | Failover mesh option (not active by default) |

@@ -1,0 +1,16 @@
+config_version: 3
+datasources:
+  civiclink_postgres:
+    class_name: Datasource
+    execution_engine: { class_name: SqlAlchemyExecutionEngine, connection_string: "${CIVICLINK_PG_DSN}" }
+    data_connectors:
+      default_runtime: { class_name: RuntimeDataConnector, batch_identifiers: [run_id] }
+  civiclink_clickhouse:
+    class_name: Datasource
+    execution_engine: { class_name: SqlAlchemyExecutionEngine, connection_string: "${CIVICLINK_CH_DSN}" }
+stores:
+  expectations_store:    { class_name: ExpectationsStore,    store_backend: { class_name: TupleFilesystemStoreBackend, base_directory: expectations } }
+  validations_store:     { class_name: ValidationsStore,     store_backend: { class_name: TupleFilesystemStoreBackend, base_directory: uncommitted/validations } }
+  evaluation_parameter_store: { class_name: EvaluationParameterStore }
+data_docs_sites:
+  local_site: { class_name: SiteBuilder, store_backend: { class_name: TupleFilesystemStoreBackend, base_directory: uncommitted/data_docs/local_site } }

@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: civiclink
+  description: Smart Government & Public Services Platform
+spec:
+  owner: civiclink-platform
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata: { name: civil-registration }
+spec: { owner: civiclink-civil-registration }
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata: { name: identity-access }
+spec: { owner: civiclink-identity }
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata: { name: civiclink-services }
+spec:
+  type: url
+  targets:
+    - https://github.com/prabhat-roy/CivicLink/blob/main/src/identity-access/auth-service/catalog-info.yaml
+    - https://github.com/prabhat-roy/CivicLink/blob/main/src/civil-registration/birth-registration/catalog-info.yaml

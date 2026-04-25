@@ -1,0 +1,17 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata: { name: kafka-broker-loss, namespace: litmus }
+spec:
+  appinfo:
+    appns: kafka
+    applabel: 'app=kafka'
+    appkind: statefulset
+  chaosServiceAccount: litmus-admin
+  experiments:
+    - name: pod-delete
+      spec:
+        components:
+          env:
+            - { name: TOTAL_CHAOS_DURATION, value: '60' }
+            - { name: CHAOS_INTERVAL,        value: '10' }
+            - { name: PODS_AFFECTED_PERC,    value: '33' }

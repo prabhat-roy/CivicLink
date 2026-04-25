@@ -1,0 +1,12 @@
+name: civiclink
+version: 1.0.0
+profile: civiclink
+model-paths: [models]
+target-path: target
+clean-targets: [target, dbt_packages]
+
+models:
+  civiclink:
+    staging:    { +materialized: view }
+    civic:      { +materialized: incremental }
+    analytics:  { +materialized: table, +on_schema_change: append_new_columns }

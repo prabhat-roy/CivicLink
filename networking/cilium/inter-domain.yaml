@@ -1,0 +1,12 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata: { name: civiclink-cross-domain-bff-only, namespace: civiclink }
+spec:
+  endpointSelector: { matchLabels: { app.kubernetes.io/part-of: civiclink } }
+  ingress:
+    - fromEndpoints:
+        - matchLabels: { app.kubernetes.io/name: api-gateway }
+        - matchLabels: { app.kubernetes.io/name: citizen-bff }
+        - matchLabels: { app.kubernetes.io/name: officer-bff }
+        - matchLabels: { app.kubernetes.io/name: mobile-bff }
+        - matchLabels: { app.kubernetes.io/name: data-exchange-gateway }

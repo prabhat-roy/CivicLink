@@ -1,0 +1,11 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata: { name: civiclink, namespace: civiclink }
+spec:
+  entryPoints: [websecure]
+  routes:
+    - match: Host(`api.civiclink.gov`)
+      kind: Rule
+      services: [{ name: api-gateway, port: 50000 }]
+      middlewares: [{ name: civiclink-rate-limit }, { name: civiclink-headers }]
+  tls: { secretName: civiclink-tls }

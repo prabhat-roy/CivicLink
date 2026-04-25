@@ -1,0 +1,11 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata: { name: inter-agency-network-delay, namespace: chaos-testing }
+spec:
+  action: delay
+  mode: all
+  selector:
+    namespaces: [civiclink]
+    labelSelectors: { app.kubernetes.io/name: data-exchange-gateway }
+  delay: { latency: "500ms", jitter: "50ms" }
+  duration: "5m"
