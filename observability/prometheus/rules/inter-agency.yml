@@ -1,0 +1,15 @@
+groups:
+  - name: civiclink-inter-agency
+    rules:
+      - alert: ConsentTokenRejection
+        expr: increase(civiclink_consent_token_rejected_total[5m]) > 0
+        labels: { severity: warning }
+        annotations:
+          summary: "ConsentToken rejected at data-exchange-gateway"
+          description: "Inter-agency request denied — investigate consent issuer / scope"
+
+      - alert: AuditLagHigh
+        expr: kafka_consumergroup_lag{topic=~"audit-compliance.*"} > 1000
+        for: 5m
+        labels: { severity: critical, team: audit-compliance }
+        annotations: { summary: "Audit log consumer lag >1000 messages" }

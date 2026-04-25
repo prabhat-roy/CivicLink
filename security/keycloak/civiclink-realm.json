@@ -1,0 +1,37 @@
+{
+  "realm": "civiclink",
+  "enabled": true,
+  "sslRequired": "external",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "rememberMe": true,
+  "verifyEmail": true,
+  "resetPasswordAllowed": true,
+  "bruteForceProtected": true,
+  "permanentLockout": false,
+  "maxFailureWaitSeconds": 900,
+  "minimumQuickLoginWaitSeconds": 60,
+  "waitIncrementSeconds": 60,
+  "quickLoginCheckMilliSeconds": 1000,
+  "maxDeltaTimeSeconds": 43200,
+  "failureFactor": 5,
+  "passwordPolicy": "length(12) and specialChars(1) and upperCase(1) and digits(1) and notUsername and passwordHistory(5)",
+  "otpPolicyType": "totp",
+  "otpPolicyAlgorithm": "HmacSHA256",
+  "otpPolicyDigits": 6,
+  "webAuthnPolicyRpEntityName": "CivicLink",
+  "clients": [
+    { "clientId": "citizen-portal",  "publicClient": true,  "redirectUris": ["https://civiclink.gov/*"], "webOrigins": ["+"] },
+    { "clientId": "officer-portal",  "publicClient": false, "redirectUris": ["https://officer.civiclink.gov/*"] },
+    { "clientId": "mobile-app",      "publicClient": true }
+  ],
+  "roles": {
+    "realm": [
+      { "name": "citizen" },
+      { "name": "officer" },
+      { "name": "officer-supervisor" },
+      { "name": "compliance-auditor" },
+      { "name": "system-admin" }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+- rule: Unexpected outbound connection from civiclink namespace
+  desc: Detects unexpected egress destinations from CivicLink workloads.
+  condition: >
+    evt.type=connect and evt.dir=< and
+    container and k8s_ns_name="civiclink" and
+    not fd.sip in (allowed_civiclink_egress)
+  output: "Unexpected egress from %container.name to %fd.sip:%fd.sport"
+  priority: WARNING
+  tags: [network, civiclink]
+
+- rule: Citizen ID raw access
+  desc: Officer service queried citizen vault without consent context.
+  condition: >
+    fd.name endswith "/v1/citizens" and not k8s.pod.label.civiclink.io/consent-aware="true"
+  output: "Raw citizen lookup without consent token: %container.name"
+  priority: WARNING
+  tags: [pii, civiclink]
+
+- list: allowed_civiclink_egress
+  items: ["10.0.0.0/8","172.16.0.0/12"]

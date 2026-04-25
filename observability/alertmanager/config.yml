@@ -1,0 +1,36 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: civiclink-default
+  group_by: [app, severity]
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 4h
+  routes:
+    - matchers: [severity="critical"]
+      receiver: pagerduty-civiclink
+      continue: true
+    - matchers: [team=~".+"]
+      receiver: slack-team-channel
+      group_by: [team]
+
+receivers:
+  - name: civiclink-default
+    slack_configs:
+      - api_url: ${SLACK_WEBHOOK}
+        channel: '#civiclink-alerts'
+
+  - name: pagerduty-civiclink
+    pagerduty_configs:
+      - service_key: ${PAGERDUTY_KEY}
+
+  - name: slack-team-channel
+    slack_configs:
+      - api_url: ${SLACK_WEBHOOK}
+        channel: '#civiclink-{{ .CommonLabels.team }}'
+
+inhibit_rules:
+  - source_matchers: [severity="critical"]
+    target_matchers: [severity="warning"]
+    equal: [app]
