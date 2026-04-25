@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.publicsafety.events",
+  "name": "FirRegistered",
+  "doc": "public-safety.fir.registered — emitted by the public-safety domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"fir_id","type":"string"},{"name":"complainant_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"police_station","type":"string"},{"name":"sections","type":{"type":"array","items":"string"}}
+  ]
+}

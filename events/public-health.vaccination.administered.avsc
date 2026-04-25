@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.publichealth.events",
+  "name": "VaccinationAdministered",
+  "doc": "public-health.vaccination.administered — emitted by the public-health domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"dose_id","type":"string"},{"name":"recipient_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"vaccine_code","type":"string"},{"name":"dose_number","type":"int"}
+  ]
+}

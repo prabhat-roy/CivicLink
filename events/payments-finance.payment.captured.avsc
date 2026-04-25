@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.paymentsfinance.events",
+  "name": "PaymentCaptured",
+  "doc": "payments-finance.payment.captured — emitted by the payments-finance domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"payment_id","type":"string"},{"name":"order_ref","type":"string"},{"name":"amount_minor","type":"long"},{"name":"currency_code","type":"string"},{"name":"rail","type":"string"}
+  ]
+}

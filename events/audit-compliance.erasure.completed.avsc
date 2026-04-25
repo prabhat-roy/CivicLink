@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.auditcompliance.events",
+  "name": "ErasureCompleted",
+  "doc": "audit-compliance.erasure.completed — emitted by the audit-compliance domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"erasure_request_id","type":"string"},{"name":"subject_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"systems_purged","type":{"type":"array","items":"string"}}
+  ]
+}

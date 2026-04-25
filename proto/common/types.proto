@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package civiclink.common.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option java_package = "com.civiclink.common.v1";
+option java_multiple_files = true;
+
+// CitizenId — a national identifier reference (sealed, never the raw number).
+message CitizenId {
+  // Tokenised reference; reverse-lookup requires Vault access.
+  string token = 1;
+}
+
+// Address — a postal address.
+message Address {
+  string line1 = 1;
+  string line2 = 2;
+  string city = 3;
+  string state = 4;
+  string country_code = 5;  // ISO 3166-1 alpha-2
+  string postal_code = 6;
+  // Optional spatial anchor for land/property records.
+  GeoPoint geo = 7;
+}
+
+// GeoPoint — WGS84 lat/long.
+message GeoPoint {
+  double lat = 1;
+  double lng = 2;
+}
+
+// Money — a fixed-point monetary amount in minor units of the currency.
+message Money {
+  string currency_code = 1;  // ISO 4217 (e.g. "INR", "USD")
+  int64 minor_units = 2;     // e.g. 12345 = 123.45 INR
+}
+
+// Pagination — request side.
+message PageRequest {
+  int32 size = 1;
+  string page_token = 2;
+}
+
+// Pagination — response side.
+message PageResponse {
+  string next_page_token = 1;
+  int64 total_size = 2;
+}
+
+// AuditMetadata — captured on every privileged write.
+message AuditMetadata {
+  string actor_id = 1;
+  string actor_role = 2;
+  string ip_address = 3;
+  string user_agent = 4;
+  google.protobuf.Timestamp event_time = 5;
+}
+
+// ConsentToken — OpenID4VC verifiable presentation reference.
+// Inter-agency calls must include a valid ConsentToken or be rejected at gateway.
+message ConsentToken {
+  string id = 1;
+  string issuer = 2;
+  google.protobuf.Timestamp issued_at = 3;
+  google.protobuf.Timestamp expires_at = 4;
+  repeated string scopes = 5;
+}

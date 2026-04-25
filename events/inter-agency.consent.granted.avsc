@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.interagency.events",
+  "name": "ConsentGranted",
+  "doc": "inter-agency.consent.granted — emitted by the inter-agency domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"consent_id","type":"string"},{"name":"citizen_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"requesting_agency","type":"string"},{"name":"providing_agency","type":"string"},{"name":"scopes","type":{"type":"array","items":"string"}}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.analyticspolicy.events",
+  "name": "DashboardRefreshed",
+  "doc": "analytics-policy.dashboard.refreshed — emitted by the analytics-policy domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"dashboard_id","type":"string"},{"name":"refreshed_by","type":"string"},{"name":"row_count","type":"long"}
+  ]
+}

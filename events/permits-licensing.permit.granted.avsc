@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.permitslicensing.events",
+  "name": "PermitGranted",
+  "doc": "permits-licensing.permit.granted — emitted by the permits-licensing domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"permit_id","type":"string"},{"name":"applicant_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"permit_type","type":"string"},{"name":"valid_until","type":{"type":"long","logicalType":"timestamp-millis"}}
+  ]
+}

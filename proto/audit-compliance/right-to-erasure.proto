@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package civiclink.auditcompliance.v1;
+
+import "common/types.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_package = "com.civiclink.auditcompliance.v1";
+option java_multiple_files = true;
+
+// right-to-erasure: GDPR Article 17 erasure workflow
+service  $args[0].Value.ToUpper() ight $args[0].Groups[1].Value.ToUpper() o $args[0].Groups[1].Value.ToUpper() rasureService {
+  rpc Health(HealthRequest) returns (HealthResponse);
+
+  // TODO: domain-specific RPCs added in subsequent waves.
+  // Placeholder Get/List/Create/Update/Delete are intentionally omitted at this stage —
+  // they will be defined when each service's domain model is finalised.
+}
+
+message HealthRequest {}
+message HealthResponse {
+  string status = 1;
+  string version = 2;
+  google.protobuf.Timestamp checked_at = 3;
+}

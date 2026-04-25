@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.identityaccess.events",
+  "name": "SessionStarted",
+  "doc": "identity-access.session.started — emitted by the identity-access domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"session_id","type":"string"},{"name":"actor_id","type":"string"},{"name":"auth_method","type":"string"},{"name":"ip_address","type":"string"}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.socialwelfare.events",
+  "name": "BenefitDisbursed",
+  "doc": "social-welfare.benefit.disbursed — emitted by the social-welfare domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"benefit_scheme_code","type":"string"},{"name":"beneficiary_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"amount_minor","type":"long"},{"name":"currency_code","type":"string"}
+  ]
+}

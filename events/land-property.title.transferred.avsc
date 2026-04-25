@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.landproperty.events",
+  "name": "TitleTransferred",
+  "doc": "land-property.title.transferred — emitted by the land-property domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"title_id","type":"string"},{"name":"from_owner_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"to_owner_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"plot_id","type":"string"}
+  ]
+}

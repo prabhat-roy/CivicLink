@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.civilregistration.events",
+  "name": "BirthRegistered",
+  "doc": "civil-registration.birth.registered — emitted by the civil-registration domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"birth_record_id","type":"string"},{"name":"citizen_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"date_of_birth","type":{"type":"int","logicalType":"date"}},{"name":"place_of_birth","type":"string"}
+  ]
+}

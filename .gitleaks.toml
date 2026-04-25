@@ -1,0 +1,14 @@
+title = "CivicLink — Gitleaks config"
+
+[allowlist]
+description = "Allow project documentation patterns"
+paths = [
+  '''docs/architecture/.*''',
+  '''docs/runbooks/.*''',
+]
+
+[[rules]]
+id = "civiclink-aadhaar-like"
+description = "12-digit national ID-style number"
+regex = '''\b\d{4}\s?\d{4}\s?\d{4}\b'''
+tags = ["pii"]

@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.citizenidentity.events",
+  "name": "NationalIdIssued",
+  "doc": "citizen-identity.national-id.issued — emitted by the citizen-identity domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"citizen_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"id_type","type":"string"},{"name":"issued_by","type":"string"}
+  ]
+}

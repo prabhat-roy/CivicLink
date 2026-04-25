@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: e-sign-service
+server:
+  port: ${PORT:50261}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true

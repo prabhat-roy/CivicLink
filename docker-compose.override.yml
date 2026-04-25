@@ -1,0 +1,9 @@
+# Local-only overrides — used automatically when running `docker compose up`.
+# Reduces resource usage and exposes useful debug ports.
+version: "3.9"
+
+services:
+  postgres:
+    environment:
+      POSTGRES_INITDB_ARGS: "--data-checksums"
+    command: ["postgres", "-c", "log_statement=all", "-c", "log_min_duration_statement=0"]

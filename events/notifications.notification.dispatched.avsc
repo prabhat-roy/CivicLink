@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.notifications.events",
+  "name": "NotificationDispatched",
+  "doc": "notifications.notification.dispatched — emitted by the notifications domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"notification_id","type":"string"},{"name":"channel","type":{"type":"enum","name":"NotificationChannel","symbols":["SMS","EMAIL","PUSH","IN_APP","IVR"]}},{"name":"recipient_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"template_code","type":"string"}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.documentmanagement.events",
+  "name": "DocumentSigned",
+  "doc": "document-management.document.signed — emitted by the document-management domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"document_id","type":"string"},{"name":"signer_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"signature_format","type":"string"},{"name":"signed_at","type":{"type":"long","logicalType":"timestamp-millis"}}
+  ]
+}

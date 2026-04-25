@@ -1,6 +1,17 @@
 # Events — CivicLink
 
-Kafka Avro / Protobuf event schemas — one schema per domain event.
+Avro schemas for cross-domain events published to Kafka. One file per event,
+named `<domain>.<entity>.<verb>.avsc`. Schema-registry-managed; **never break
+forward compatibility** — evolve fields with defaults only.
 
-> Skeleton placeholder. Content will be added as the project takes shape.
-> See [../README.md](../README.md) for the CivicLink project overview.
+## Conventions
+
+- Topic naming: `<domain>.<entity>.<event>` — e.g. `civil-registration.birth.registered`
+- Namespace: `com.civiclink.<domain>.events`
+- Every event includes:
+  - `event_id` (UUID)
+  - `event_time` (millis since epoch)
+  - `actor` (officer or citizen who triggered the event, where applicable)
+  - `correlation_id` (propagated across all related events for tracing)
+- PII (citizen_id, biometric_hash) is **always** tokenised — schemas reference
+  the tokenised form via the shared `CitizenIdRef` record.

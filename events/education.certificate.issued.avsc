@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.education.events",
+  "name": "CertificateIssued",
+  "doc": "education.certificate.issued — emitted by the education domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"certificate_id","type":"string"},{"name":"holder_ref","type":"com.civiclink.common.events.CitizenIdRef"},{"name":"institution_id","type":"string"},{"name":"issued_at","type":{"type":"long","logicalType":"timestamp-millis"}}
+  ]
+}

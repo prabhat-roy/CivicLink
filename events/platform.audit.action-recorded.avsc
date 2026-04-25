@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.civiclink.platform.events",
+  "name": "PlatformAuditAction",
+  "doc": "platform.audit.action-recorded — emitted by the platform domain",
+  "fields": [
+    { "name": "event_id", "type": { "type": "string", "logicalType": "uuid" } },
+    { "name": "event_time", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "actor_id", "type": ["null","string"], "default": null },
+    {"name":"action","type":"string"},{"name":"resource","type":"string"},{"name":"actor_id","type":"string"},{"name":"actor_role","type":"string"}
+  ]
+}
