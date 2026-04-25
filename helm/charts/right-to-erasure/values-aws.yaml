@@ -1,0 +1,17 @@
+# AWS overlay for right-to-erasure.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-right-to-erasure
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-right-to-erasure
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: right-to-erasure-aws-secrets

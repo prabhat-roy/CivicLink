@@ -1,0 +1,6 @@
+apiVersion: v2
+name: right-to-erasure
+description: GDPR Article 17 erasure workflow
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

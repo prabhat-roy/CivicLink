@@ -1,0 +1,17 @@
+# AWS overlay for email-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-email-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-email-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: email-service-aws-secrets

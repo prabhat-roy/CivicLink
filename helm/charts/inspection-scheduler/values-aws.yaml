@@ -1,0 +1,17 @@
+# AWS overlay for inspection-scheduler.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-inspection-scheduler
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-inspection-scheduler
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: inspection-scheduler-aws-secrets

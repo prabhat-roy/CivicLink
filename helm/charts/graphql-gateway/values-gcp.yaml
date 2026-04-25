@@ -1,0 +1,17 @@
+# GCP overlay for graphql-gateway.
+cloud:
+  provider: gcp
+  storageClass: pd-balanced
+  ingressClass: gce
+
+serviceAccount:
+  annotations:
+    iam.gke.io/gcp-service-account: civiclink-graphql-gateway@{{ .Values.gcp.project }}.iam.gserviceaccount.com
+
+podAnnotations:
+  cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
+
+# Pulled by GCP Secret Manager CSI driver
+envFrom:
+  - secretRef:
+      name: graphql-gateway-gcp-secrets

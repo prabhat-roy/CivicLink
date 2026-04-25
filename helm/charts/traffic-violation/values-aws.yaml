@@ -1,0 +1,17 @@
+# AWS overlay for traffic-violation.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-traffic-violation
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-traffic-violation
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: traffic-violation-aws-secrets

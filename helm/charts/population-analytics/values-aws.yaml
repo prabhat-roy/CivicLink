@@ -1,0 +1,17 @@
+# AWS overlay for population-analytics.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-population-analytics
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-population-analytics
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: population-analytics-aws-secrets

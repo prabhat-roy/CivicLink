@@ -1,0 +1,17 @@
+# AWS overlay for officer-bff.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-officer-bff
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-officer-bff
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: officer-bff-aws-secrets

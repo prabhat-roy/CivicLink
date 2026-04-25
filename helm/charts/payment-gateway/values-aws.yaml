@@ -1,0 +1,17 @@
+# AWS overlay for payment-gateway.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-payment-gateway
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-payment-gateway
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: payment-gateway-aws-secrets

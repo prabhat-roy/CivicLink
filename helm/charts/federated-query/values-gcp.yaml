@@ -1,0 +1,17 @@
+# GCP overlay for federated-query.
+cloud:
+  provider: gcp
+  storageClass: pd-balanced
+  ingressClass: gce
+
+serviceAccount:
+  annotations:
+    iam.gke.io/gcp-service-account: civiclink-federated-query@{{ .Values.gcp.project }}.iam.gserviceaccount.com
+
+podAnnotations:
+  cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
+
+# Pulled by GCP Secret Manager CSI driver
+envFrom:
+  - secretRef:
+      name: federated-query-gcp-secrets

@@ -1,0 +1,17 @@
+# AWS overlay for e-sign-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-e-sign-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-e-sign-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: e-sign-service-aws-secrets

@@ -1,0 +1,17 @@
+# AWS overlay for programme-evaluation.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-programme-evaluation
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-programme-evaluation
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: programme-evaluation-aws-secrets

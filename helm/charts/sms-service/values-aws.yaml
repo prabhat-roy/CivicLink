@@ -1,0 +1,17 @@
+# AWS overlay for sms-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-sms-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-sms-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: sms-service-aws-secrets

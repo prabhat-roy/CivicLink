@@ -1,0 +1,17 @@
+# AWS overlay for land-registry.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-land-registry
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-land-registry
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: land-registry-aws-secrets

@@ -1,0 +1,17 @@
+# AWS overlay for geospatial-analytics.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-geospatial-analytics
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-geospatial-analytics
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: geospatial-analytics-aws-secrets

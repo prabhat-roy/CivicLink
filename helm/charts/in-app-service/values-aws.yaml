@@ -1,0 +1,17 @@
+# AWS overlay for in-app-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-in-app-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-in-app-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: in-app-service-aws-secrets

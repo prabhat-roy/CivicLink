@@ -1,0 +1,17 @@
+# AWS overlay for clinic-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-clinic-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-clinic-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: clinic-service-aws-secrets

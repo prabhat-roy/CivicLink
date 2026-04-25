@@ -1,0 +1,6 @@
+apiVersion: v2
+name: access-log-service
+description: Officer access log + RTI
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

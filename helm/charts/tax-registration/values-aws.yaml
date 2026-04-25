@@ -1,0 +1,17 @@
+# AWS overlay for tax-registration.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-tax-registration
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-tax-registration
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: tax-registration-aws-secrets

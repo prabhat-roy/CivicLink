@@ -1,0 +1,17 @@
+# Azure overlay for status-tracker.
+cloud:
+  provider: azure
+  storageClass: managed-csi
+  ingressClass: azure-application-gateway
+
+serviceAccount:
+  annotations:
+    azure.workload.identity/client-id: "{{ .Values.azure.clientId }}"
+
+podLabels:
+  azure.workload.identity/use: "true"
+
+# Pulled by Azure Key Vault CSI driver
+envFrom:
+  - secretRef:
+      name: status-tracker-azure-secrets

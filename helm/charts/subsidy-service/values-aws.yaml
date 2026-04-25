@@ -1,0 +1,17 @@
+# AWS overlay for subsidy-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-subsidy-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-subsidy-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: subsidy-service-aws-secrets

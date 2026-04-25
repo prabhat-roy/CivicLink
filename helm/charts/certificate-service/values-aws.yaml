@@ -1,0 +1,17 @@
+# AWS overlay for certificate-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-certificate-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-certificate-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: certificate-service-aws-secrets

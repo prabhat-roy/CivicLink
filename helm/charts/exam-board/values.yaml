@@ -1,0 +1,73 @@
+# Cloud-agnostic defaults for exam-board.
+# Overlay with values-{aws|gcp|azure}.yaml for cloud-specific settings.
+
+image:
+  repository: civiclink/exam-board
+  tag: ""        # defaults to .Chart.AppVersion
+  pullPolicy: IfNotPresent
+
+replicaCount: 2
+
+service:
+  type: ClusterIP
+  port: 50182
+  targetPort: 50182
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 1000m
+    memory: 512Mi
+
+probes:
+  liveness:
+    httpGet:
+      path: /healthz
+      port: 50182
+    initialDelaySeconds: 15
+    periodSeconds: 20
+  readiness:
+    httpGet:
+      path: /healthz
+      port: 50182
+    initialDelaySeconds: 5
+    periodSeconds: 10
+
+serviceAccount:
+  create: true
+  annotations: {}
+
+podLabels:
+  app.kubernetes.io/name: exam-board
+  app.kubernetes.io/part-of: civiclink
+  shopos.io/domain: education
+  civiclink.io/owner-team: education
+
+podAnnotations: {}
+
+securityContext:
+  runAsNonRoot: true
+  runAsUser: 1000
+  fsGroup: 1000
+  seccompProfile:
+    type: RuntimeDefault
+
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  capabilities:
+    drop: ["ALL"]
+
+env: []        # additional env vars
+envFrom: []    # references to ConfigMaps / Secrets
+
+config:
+  LOG_LEVEL: info
+
+# Cloud overlay placeholders (overridden in values-<cloud>.yaml)
+cloud:
+  provider: ""           # aws | gcp | azure
+  storageClass: ""
+  ingressClass: ""

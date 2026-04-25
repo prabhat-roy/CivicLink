@@ -1,0 +1,17 @@
+# AWS overlay for citizen-sso.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-citizen-sso
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-citizen-sso
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: citizen-sso-aws-secrets

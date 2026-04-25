@@ -1,0 +1,17 @@
+# GCP overlay for ivr-service.
+cloud:
+  provider: gcp
+  storageClass: pd-balanced
+  ingressClass: gce
+
+serviceAccount:
+  annotations:
+    iam.gke.io/gcp-service-account: civiclink-ivr-service@{{ .Values.gcp.project }}.iam.gserviceaccount.com
+
+podAnnotations:
+  cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
+
+# Pulled by GCP Secret Manager CSI driver
+envFrom:
+  - secretRef:
+      name: ivr-service-gcp-secrets

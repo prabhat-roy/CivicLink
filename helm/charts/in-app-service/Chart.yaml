@@ -1,0 +1,6 @@
+apiVersion: v2
+name: in-app-service
+description: In-app message inbox
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

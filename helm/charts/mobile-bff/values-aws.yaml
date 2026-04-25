@@ -1,0 +1,17 @@
+# AWS overlay for mobile-bff.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-mobile-bff
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-mobile-bff
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: mobile-bff-aws-secrets

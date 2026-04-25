@@ -1,0 +1,17 @@
+# AWS overlay for exam-board.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-exam-board
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-exam-board
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: exam-board-aws-secrets

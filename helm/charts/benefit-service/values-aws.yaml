@@ -1,0 +1,17 @@
+# AWS overlay for benefit-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-benefit-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-benefit-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: benefit-service-aws-secrets

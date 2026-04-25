@@ -1,0 +1,17 @@
+# AWS overlay for audit-trail.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-audit-trail
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-audit-trail
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: audit-trail-aws-secrets

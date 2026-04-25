@@ -1,0 +1,17 @@
+# AWS overlay for treasury-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-treasury-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-treasury-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: treasury-service-aws-secrets

@@ -1,0 +1,17 @@
+# AWS overlay for eligibility-engine.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-eligibility-engine
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-eligibility-engine
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: eligibility-engine-aws-secrets

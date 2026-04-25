@@ -1,0 +1,17 @@
+# AWS overlay for national-id-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-national-id-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-national-id-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: national-id-service-aws-secrets

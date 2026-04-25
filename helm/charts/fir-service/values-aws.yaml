@@ -1,0 +1,17 @@
+# AWS overlay for fir-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-fir-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-fir-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: fir-service-aws-secrets

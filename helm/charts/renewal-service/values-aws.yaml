@@ -1,0 +1,17 @@
+# AWS overlay for renewal-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-renewal-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-renewal-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: renewal-service-aws-secrets

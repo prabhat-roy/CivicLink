@@ -1,0 +1,6 @@
+apiVersion: v2
+name: digital-id-wallet
+description: OpenID4VC verifiable credentials wallet
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

@@ -1,0 +1,17 @@
+# Azure overlay for in-app-service.
+cloud:
+  provider: azure
+  storageClass: managed-csi
+  ingressClass: azure-application-gateway
+
+serviceAccount:
+  annotations:
+    azure.workload.identity/client-id: "{{ .Values.azure.clientId }}"
+
+podLabels:
+  azure.workload.identity/use: "true"
+
+# Pulled by Azure Key Vault CSI driver
+envFrom:
+  - secretRef:
+      name: in-app-service-azure-secrets

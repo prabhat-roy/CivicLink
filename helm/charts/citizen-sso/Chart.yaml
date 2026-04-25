@@ -1,0 +1,6 @@
+apiVersion: v2
+name: citizen-sso
+description: Citizen OIDC SSO
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

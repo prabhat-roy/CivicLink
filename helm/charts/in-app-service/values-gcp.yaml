@@ -1,0 +1,17 @@
+# GCP overlay for in-app-service.
+cloud:
+  provider: gcp
+  storageClass: pd-balanced
+  ingressClass: gce
+
+serviceAccount:
+  annotations:
+    iam.gke.io/gcp-service-account: civiclink-in-app-service@{{ .Values.gcp.project }}.iam.gserviceaccount.com
+
+podAnnotations:
+  cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
+
+# Pulled by GCP Secret Manager CSI driver
+envFrom:
+  - secretRef:
+      name: in-app-service-gcp-secrets

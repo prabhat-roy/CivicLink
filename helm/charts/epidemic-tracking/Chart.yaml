@@ -1,0 +1,6 @@
+apiVersion: v2
+name: epidemic-tracking
+description: Disease surveillance + alerting
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

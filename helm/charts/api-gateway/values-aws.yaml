@@ -1,0 +1,17 @@
+# AWS overlay for api-gateway.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-api-gateway
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-api-gateway
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: api-gateway-aws-secrets

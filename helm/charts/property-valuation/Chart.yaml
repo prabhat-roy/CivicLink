@@ -1,0 +1,6 @@
+apiVersion: v2
+name: property-valuation
+description: Government property valuation
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

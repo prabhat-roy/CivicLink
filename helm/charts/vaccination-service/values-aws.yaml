@@ -1,0 +1,17 @@
+# AWS overlay for vaccination-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-vaccination-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-vaccination-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: vaccination-service-aws-secrets

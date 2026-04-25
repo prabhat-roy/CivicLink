@@ -1,0 +1,6 @@
+apiVersion: v2
+name: e-receipt-service
+description: Digital receipt issuance
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: biometric-service
+description: MOSIP biometric integration
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

@@ -1,0 +1,17 @@
+# AWS overlay for deduplication-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-deduplication-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-deduplication-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: deduplication-service-aws-secrets

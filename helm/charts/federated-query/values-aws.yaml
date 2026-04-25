@@ -1,0 +1,17 @@
+# AWS overlay for federated-query.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-federated-query
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-federated-query
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: federated-query-aws-secrets

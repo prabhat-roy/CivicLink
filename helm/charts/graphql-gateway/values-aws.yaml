@@ -1,0 +1,17 @@
+# AWS overlay for graphql-gateway.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-graphql-gateway
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-graphql-gateway
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: graphql-gateway-aws-secrets

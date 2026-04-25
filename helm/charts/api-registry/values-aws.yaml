@@ -1,0 +1,17 @@
+# AWS overlay for api-registry.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-api-registry
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-api-registry
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: api-registry-aws-secrets

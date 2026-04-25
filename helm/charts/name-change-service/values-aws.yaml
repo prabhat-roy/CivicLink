@@ -1,0 +1,17 @@
+# AWS overlay for name-change-service.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-name-change-service
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-name-change-service
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: name-change-service-aws-secrets

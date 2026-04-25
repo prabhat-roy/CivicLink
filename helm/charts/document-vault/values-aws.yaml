@@ -1,0 +1,17 @@
+# AWS overlay for document-vault.
+cloud:
+  provider: aws
+  storageClass: gp3
+  ingressClass: alb
+
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/civiclink-document-vault
+
+podAnnotations:
+  iam.amazonaws.com/role: civiclink-document-vault
+
+# Pulled by AWS Secrets Manager CSI driver
+envFrom:
+  - secretRef:
+      name: document-vault-aws-secrets
