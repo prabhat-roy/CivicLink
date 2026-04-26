@@ -1,0 +1,10 @@
+clusterName: civiclink.teleport.internal
+authentication:
+  type: github
+  githubConnector:
+    name: github
+    redirectUrl: https://teleport.civiclink.internal/v1/webapi/github/callback
+kubeClusterName: civiclink-prod
+ingress:
+  enabled: true
+  hostname: teleport.civiclink.internal

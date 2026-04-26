@@ -1,0 +1,7 @@
+creation_rules:
+  - path_regex: secrets/civiclink/.*\.yaml
+    kms: arn:aws:kms:us-east-1:111111111111:alias/civiclink-sops
+  - path_regex: secrets/civiclink/gcp/.*\.yaml
+    gcp_kms: projects/civiclink-prod/locations/global/keyRings/civiclink/cryptoKeys/sops
+  - path_regex: secrets/civiclink/azure/.*\.yaml
+    azure_keyvault: https://civiclink-kv.vault.azure.net/keys/sops/abc123
