@@ -1,0 +1,6 @@
+# DHIS2 — public health data warehouse
+image: { repository: dhis2/core, tag: 2.41 }
+postgresql: { enabled: true, persistence: { storageClass: gp3, size: 200Gi } }
+ingress:
+  enabled: true
+  hosts: [{ host: dhis2.civiclink.gov }]

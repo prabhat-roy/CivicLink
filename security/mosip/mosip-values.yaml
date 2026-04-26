@@ -1,0 +1,13 @@
+# MOSIP — Modular Open Source Identity Platform (biometric ID stack)
+image: { repository: mosipid/registration-processor, tag: 1.2.0.1 }
+modules:
+  prereg:    { enabled: true }
+  registration-processor: { enabled: true }
+  ida:       { enabled: true }    # Identity Authentication
+  resident:  { enabled: true }
+biometric:
+  abis:        { provider: bqat, replicas: 3 }
+  deduplication: { enabled: true }
+ingress:
+  enabled: true
+  hosts: [{ host: mosip.civiclink.gov }]

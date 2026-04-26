@@ -1,0 +1,6 @@
+# ODK Central — open-source data collection platform
+image: { repository: getodk/central-service, tag: v2024.3 }
+postgresql: { enabled: true }
+ingress:
+  enabled: true
+  hosts: [{ host: odk.civiclink.gov }]
