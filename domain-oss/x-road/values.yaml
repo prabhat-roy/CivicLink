@@ -1,0 +1,3 @@
+﻿# X-Road — Estonian inter-agency interop layer (Nordic Institute for Interoperability Solutions)
+image: { repository: niis/xroad-security-server, tag: latest }
+xroad: { instance: civiclink-prod, security-server: { ha: true } }

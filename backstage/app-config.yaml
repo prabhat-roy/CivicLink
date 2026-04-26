@@ -1,44 +1,12 @@
-app:
+﻿app:
   title: CivicLink Developer Portal
   baseUrl: http://localhost:3000
-
-organization:
-  name: CivicLink
-
 backend:
   baseUrl: http://localhost:7007
-  listen: { port: 7007 }
-  cors:
-    origin: http://localhost:3000
-    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
-    credentials: true
-  database:
-    client: pg
-    connection:
-      host:     ${POSTGRES_HOST}
-      port:     ${POSTGRES_PORT}
-      user:     ${POSTGRES_USER}
-      password: ${POSTGRES_PASSWORD}
-
-integrations:
-  github:
-    - { host: github.com, token: ${GITHUB_TOKEN} }
-
-techdocs:
-  builder: 'local'
-  generator: { runIn: 'docker' }
-  publisher: { type: 'local' }
-
-auth:
-  environment: development
-  providers:
-    github:
-      development:
-        clientId:     ${AUTH_GITHUB_CLIENT_ID}
-        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
-
+  cors: { origin: http://localhost:3000 }
 catalog:
-  rules:
-    - allow: [Component, System, API, Resource, Location, Group, User]
+  rules: [ { allow: [Component, System, API, Resource, Location, Domain, User, Group] } ]
   locations:
-    - { type: file, target: ../../catalog-info.yaml }
+    - { type: file, target: ../catalog-info.yaml }
+techdocs: { builder: local, generator: { runIn: docker }, publisher: { type: local } }
+auth: { providers: { guest: dangerouslyAllowOutsideDevelopment: true } }

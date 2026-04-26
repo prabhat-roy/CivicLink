@@ -1,9 +1,16 @@
+﻿# Skaffold pipeline for CivicLink
 apiVersion: skaffold/v4beta11
 kind: Config
-metadata:
-  name: civiclink
+metadata: { name: civiclink }
 build:
-  artifacts: []   # filled in per service in src/<domain>/<service>/skaffold.yaml
+  artifacts:
+    - { image: civiclink/api-gateway, context: src/api-gateway }
+    - { image: civiclink/identity-service, context: src/identity-service }
+  local: { push: false }
 deploy:
   helm:
-    releases: []  # filled in per service
+    releases:
+      - { name: api-gateway, chartPath: helm/charts/api-gateway, namespace: civiclink }
+profiles:
+  - name: prod
+    deploy: { kubectl: { manifests: ["manifests/prod/*.yaml"] } }

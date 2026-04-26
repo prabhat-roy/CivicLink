@@ -1,0 +1,7 @@
+﻿{
+  "server": "https://wpt.civiclink.internal",
+  "tests": [
+    { "url": "https://www.civiclink.internal/", "location": "Dulles:Chrome", "runs": 3, "connectivity": "4G" },
+    { "url": "https://app.civiclink.internal/", "location": "Mumbai:Chrome", "runs": 3, "connectivity": "Cable" }
+  ]
+}

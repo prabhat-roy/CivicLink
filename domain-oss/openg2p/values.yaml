@@ -1,0 +1,3 @@
+﻿# OpenG2P — Government-to-Person payments (DPGA)
+image: { repository: openg2p/openg2p-spar, tag: latest }
+openg2p: { spar: { enabled: true }, payment-rails: [bank, mobile-money, voucher] }

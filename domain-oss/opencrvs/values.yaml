@@ -1,0 +1,3 @@
+﻿# OpenCRVS — civil registration + vital statistics (births, marriages, deaths)
+image: { repository: opencrvs/ocrvs-core, tag: latest }
+opencrvs: { hearth: { enabled: true }, fhir: { server: hapi-fhir.civiclink.svc:8080 } }

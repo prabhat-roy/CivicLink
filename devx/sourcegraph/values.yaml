@@ -1,0 +1,6 @@
+﻿# Sourcegraph (OSS) — universal code search across CivicLink
+image: { repository: sourcegraph/server, tag: 5.5.0 }
+sourcegraph:
+  externalURL: https://sourcegraph.civiclink.internal
+  repositoriesToAdd: [github.com/prabhat-roy/CivicLink]
+ingress: { enabled: true, hosts: [{ host: sourcegraph.civiclink.internal }] }

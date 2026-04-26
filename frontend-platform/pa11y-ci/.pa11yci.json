@@ -1,0 +1,9 @@
+﻿{
+  "defaults": { "standard": "WCAG2AA", "timeout": 30000, "concurrency": 4, "chromeLaunchConfig": { "args": ["--no-sandbox"] } },
+  "urls": [
+    "https://www.civiclink.internal/",
+    "https://www.civiclink.internal/about",
+    "https://app.civiclink.internal/login",
+    "https://app.civiclink.internal/dashboard"
+  ]
+}
