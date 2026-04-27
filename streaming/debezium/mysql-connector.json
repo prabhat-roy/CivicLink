@@ -1,0 +1,14 @@
+﻿{
+  "name": "civiclink-mysql-cdc",
+  "config": {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "database.hostname": "mysql.civiclink.svc",
+    "database.port": "3306",
+    "database.user": "debezium",
+    "database.password": "${file:/secrets/debezium-mysql.password:password}",
+    "database.server.id": "184054",
+    "topic.prefix": "civiclink.mysql",
+    "schema.history.internal.kafka.bootstrap.servers": "kafka.civiclink.svc:9092",
+    "schema.history.internal.kafka.topic": "civiclink.mysql.schema-history"
+  }
+}

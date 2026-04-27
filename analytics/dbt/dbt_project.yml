@@ -1,12 +1,14 @@
-name: civiclink
+﻿name: civiclink_analytics
 version: 1.0.0
+config-version: 2
 profile: civiclink
-model-paths: [models]
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
 target-path: target
-clean-targets: [target, dbt_packages]
-
+clean-targets: ["target", "dbt_packages"]
 models:
-  civiclink:
-    staging:    { +materialized: view }
-    civic:      { +materialized: incremental }
-    analytics:  { +materialized: table, +on_schema_change: append_new_columns }
+  civiclink_analytics:
+    staging:   { +materialized: view, +schema: stg }
+    marts:     { +materialized: table, +schema: mart }
+    intermediate: { +materialized: ephemeral }

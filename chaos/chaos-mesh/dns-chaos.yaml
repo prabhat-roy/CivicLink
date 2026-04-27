@@ -1,0 +1,9 @@
+﻿apiVersion: chaos-mesh.org/v1alpha1
+kind: DNSChaos
+metadata: { name: civiclink-dns-error, namespace: chaos-mesh }
+spec:
+  action: error
+  mode: all
+  patterns: ["*.civiclink.svc.cluster.local"]
+  selector: { namespaces: [civiclink] }
+  duration: 2m

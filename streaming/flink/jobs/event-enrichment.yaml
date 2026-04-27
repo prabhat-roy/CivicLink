@@ -1,0 +1,10 @@
+﻿apiVersion: flink.apache.org/v1beta1
+kind: FlinkSessionJob
+metadata: { name: civiclink-event-enrichment, namespace: civiclink }
+spec:
+  deploymentName: civiclink-flink
+  job:
+    jarURI: s3://civiclink-flink-jobs/event-enrichment.jar
+    parallelism: 4
+    upgradeMode: savepoint
+    args: ["--source-topic", "civiclink.cdc.public.events", "--sink-topic", "civiclink.events.enriched"]

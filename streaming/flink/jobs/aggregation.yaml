@@ -1,0 +1,10 @@
+﻿apiVersion: flink.apache.org/v1beta1
+kind: FlinkSessionJob
+metadata: { name: civiclink-aggregation, namespace: civiclink }
+spec:
+  deploymentName: civiclink-flink
+  job:
+    jarURI: s3://civiclink-flink-jobs/aggregation.jar
+    parallelism: 8
+    upgradeMode: savepoint
+    args: ["--source-topic", "civiclink.events.enriched", "--sink-topic", "civiclink.metrics.aggregated", "--window", "5m"]

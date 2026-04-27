@@ -1,0 +1,6 @@
+﻿plugins:
+  - { id: tech-radar, config: { url: https://github.com/prabhat-roy/CivicLink/raw/main/backstage/tech-radar.json } }
+  - { id: lighthouse, config: { baseUrl: https://lhci.civiclink.internal } }
+  - { id: opencost,   config: { baseUrl: https://opencost.civiclink.internal } }
+  - { id: argocd,     config: { url: https://argocd.civiclink.internal, token: "${ARGOCD_TOKEN}" } }
+  - { id: kubernetes, config: { clusters: [{ name: civiclink-aws, url: https://eks.civiclink.aws.internal }, { name: civiclink-gcp, url: https://gke.civiclink.gcp.internal }, { name: civiclink-azure, url: https://aks.civiclink.azure.internal }] } }
