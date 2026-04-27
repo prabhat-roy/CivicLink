@@ -1,8 +1,8 @@
-# e-sign-service
+﻿# e-sign-service
 
 Legally-binding e-signature
 
-**Domain:** ``document-management`` · **Language:** kotlin · **Port:** 50261
+Domain: ``document-management`` Â· Language: kotlin Â· Port: 50261
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/document-management/e-sign-service.proto](../../../proto/document-management/e-sign-service.proto) — gRPC contract
-- [helm/charts/e-sign-service/](../../../helm/charts/e-sign-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/document-management/e-sign-service.proto](../../../proto/document-management/e-sign-service.proto) â€” gRPC contract
+- [helm/charts/e-sign-service/](../../../helm/charts/e-sign-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

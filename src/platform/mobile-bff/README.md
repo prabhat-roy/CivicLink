@@ -1,8 +1,8 @@
-# mobile-bff
+﻿# mobile-bff
 
 BFF for citizen mobile app (Flutter)
 
-**Domain:** ``platform`` · **Language:** go · **Port:** 50003
+Domain: ``platform`` Â· Language: go Â· Port: 50003
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/platform/mobile-bff.proto](../../../proto/platform/mobile-bff.proto) — gRPC contract
-- [helm/charts/mobile-bff/](../../../helm/charts/mobile-bff/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/platform/mobile-bff.proto](../../../proto/platform/mobile-bff.proto) â€” gRPC contract
+- [helm/charts/mobile-bff/](../../../helm/charts/mobile-bff/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

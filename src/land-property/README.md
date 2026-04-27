@@ -1,6 +1,6 @@
-# land-property — CivicLink
+﻿# land-property â€” CivicLink
 
-Services in the **land-property** domain.
+Services in the land-property domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

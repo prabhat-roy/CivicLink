@@ -1,8 +1,8 @@
-# epidemic-tracking
+﻿# epidemic-tracking
 
 Disease surveillance + alerting
 
-**Domain:** ``public-health`` · **Language:** python · **Port:** 50162
+Domain: ``public-health`` Â· Language: python Â· Port: 50162
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/public-health/epidemic-tracking.proto](../../../proto/public-health/epidemic-tracking.proto) — gRPC contract
-- [helm/charts/epidemic-tracking/](../../../helm/charts/epidemic-tracking/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/public-health/epidemic-tracking.proto](../../../proto/public-health/epidemic-tracking.proto) â€” gRPC contract
+- [helm/charts/epidemic-tracking/](../../../helm/charts/epidemic-tracking/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

@@ -1,6 +1,6 @@
-# platform — CivicLink
+﻿# platform â€” CivicLink
 
-Services in the **platform** domain.
+Services in the platform domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

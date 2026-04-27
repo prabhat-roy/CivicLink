@@ -1,8 +1,8 @@
-# health-record
+﻿# health-record
 
 Public health EHR (FHIR)
 
-**Domain:** ``public-health`` · **Language:** java · **Port:** 50161
+Domain: ``public-health`` Â· Language: java Â· Port: 50161
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/public-health/health-record.proto](../../../proto/public-health/health-record.proto) — gRPC contract
-- [helm/charts/health-record/](../../../helm/charts/health-record/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/public-health/health-record.proto](../../../proto/public-health/health-record.proto) â€” gRPC contract
+- [helm/charts/health-record/](../../../helm/charts/health-record/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

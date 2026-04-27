@@ -1,6 +1,6 @@
-# citizen-identity — CivicLink
+﻿# citizen-identity â€” CivicLink
 
-Services in the **citizen-identity** domain.
+Services in the citizen-identity domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

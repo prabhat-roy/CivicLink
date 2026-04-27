@@ -1,8 +1,8 @@
-# school-registration
+﻿# school-registration
 
 School registration
 
-**Domain:** ``education`` · **Language:** java · **Port:** 50180
+Domain: ``education`` Â· Language: java Â· Port: 50180
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/education/school-registration.proto](../../../proto/education/school-registration.proto) — gRPC contract
-- [helm/charts/school-registration/](../../../helm/charts/school-registration/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/education/school-registration.proto](../../../proto/education/school-registration.proto) â€” gRPC contract
+- [helm/charts/school-registration/](../../../helm/charts/school-registration/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

@@ -1,8 +1,8 @@
-# programme-evaluation
+﻿# programme-evaluation
 
 Programme impact evaluation
 
-**Domain:** ``analytics-policy`` · **Language:** python · **Port:** 50301
+Domain: ``analytics-policy`` Â· Language: python Â· Port: 50301
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/analytics-policy/programme-evaluation.proto](../../../proto/analytics-policy/programme-evaluation.proto) — gRPC contract
-- [helm/charts/programme-evaluation/](../../../helm/charts/programme-evaluation/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/analytics-policy/programme-evaluation.proto](../../../proto/analytics-policy/programme-evaluation.proto) â€” gRPC contract
+- [helm/charts/programme-evaluation/](../../../helm/charts/programme-evaluation/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

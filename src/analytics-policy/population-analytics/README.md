@@ -1,8 +1,8 @@
-# population-analytics
+﻿# population-analytics
 
 Demographic + programme analytics
 
-**Domain:** ``analytics-policy`` · **Language:** python · **Port:** 50300
+Domain: ``analytics-policy`` Â· Language: python Â· Port: 50300
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/analytics-policy/population-analytics.proto](../../../proto/analytics-policy/population-analytics.proto) — gRPC contract
-- [helm/charts/population-analytics/](../../../helm/charts/population-analytics/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/analytics-policy/population-analytics.proto](../../../proto/analytics-policy/population-analytics.proto) â€” gRPC contract
+- [helm/charts/population-analytics/](../../../helm/charts/population-analytics/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

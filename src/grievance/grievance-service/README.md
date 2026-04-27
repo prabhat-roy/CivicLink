@@ -1,8 +1,8 @@
-# grievance-service
+﻿# grievance-service
 
 NLP-classified grievances
 
-**Domain:** ``grievance`` · **Language:** python · **Port:** 50220
+Domain: ``grievance`` Â· Language: python Â· Port: 50220
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/grievance/grievance-service.proto](../../../proto/grievance/grievance-service.proto) — gRPC contract
-- [helm/charts/grievance-service/](../../../helm/charts/grievance-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/grievance/grievance-service.proto](../../../proto/grievance/grievance-service.proto) â€” gRPC contract
+- [helm/charts/grievance-service/](../../../helm/charts/grievance-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

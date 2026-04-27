@@ -1,8 +1,8 @@
-# notification-orchestrator
+﻿# notification-orchestrator
 
 Multi-channel routing + templates
 
-**Domain:** ``notifications`` · **Language:** go · **Port:** 50320
+Domain: ``notifications`` Â· Language: go Â· Port: 50320
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/notifications/notification-orchestrator.proto](../../../proto/notifications/notification-orchestrator.proto) — gRPC contract
-- [helm/charts/notification-orchestrator/](../../../helm/charts/notification-orchestrator/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/notifications/notification-orchestrator.proto](../../../proto/notifications/notification-orchestrator.proto) â€” gRPC contract
+- [helm/charts/notification-orchestrator/](../../../helm/charts/notification-orchestrator/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

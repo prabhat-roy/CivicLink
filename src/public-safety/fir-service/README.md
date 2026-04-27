@@ -1,8 +1,8 @@
-# fir-service
+﻿# fir-service
 
 First Information Report registration
 
-**Domain:** ``public-safety`` · **Language:** java · **Port:** 50203
+Domain: ``public-safety`` Â· Language: java Â· Port: 50203
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/public-safety/fir-service.proto](../../../proto/public-safety/fir-service.proto) — gRPC contract
-- [helm/charts/fir-service/](../../../helm/charts/fir-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/public-safety/fir-service.proto](../../../proto/public-safety/fir-service.proto) â€” gRPC contract
+- [helm/charts/fir-service/](../../../helm/charts/fir-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

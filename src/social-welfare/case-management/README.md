@@ -1,8 +1,8 @@
-# case-management
+﻿# case-management
 
 Case officer workflow
 
-**Domain:** ``social-welfare`` · **Language:** java · **Port:** 50143
+Domain: ``social-welfare`` Â· Language: java Â· Port: 50143
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/social-welfare/case-management.proto](../../../proto/social-welfare/case-management.proto) — gRPC contract
-- [helm/charts/case-management/](../../../helm/charts/case-management/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/social-welfare/case-management.proto](../../../proto/social-welfare/case-management.proto) â€” gRPC contract
+- [helm/charts/case-management/](../../../helm/charts/case-management/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

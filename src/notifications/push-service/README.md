@@ -1,8 +1,8 @@
-# push-service
+﻿# push-service
 
 APNs/FCM push notifications
 
-**Domain:** ``notifications`` · **Language:** go · **Port:** 50323
+Domain: ``notifications`` Â· Language: go Â· Port: 50323
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/notifications/push-service.proto](../../../proto/notifications/push-service.proto) — gRPC contract
-- [helm/charts/push-service/](../../../helm/charts/push-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/notifications/push-service.proto](../../../proto/notifications/push-service.proto) â€” gRPC contract
+- [helm/charts/push-service/](../../../helm/charts/push-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

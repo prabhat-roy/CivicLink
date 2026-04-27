@@ -1,8 +1,8 @@
-# bi-service
+﻿# bi-service
 
 BI on Apache Superset
 
-**Domain:** ``analytics-policy`` · **Language:** python · **Port:** 50303
+Domain: ``analytics-policy`` Â· Language: python Â· Port: 50303
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/analytics-policy/bi-service.proto](../../../proto/analytics-policy/bi-service.proto) — gRPC contract
-- [helm/charts/bi-service/](../../../helm/charts/bi-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/analytics-policy/bi-service.proto](../../../proto/analytics-policy/bi-service.proto) â€” gRPC contract
+- [helm/charts/bi-service/](../../../helm/charts/bi-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

@@ -1,6 +1,6 @@
-# analytics-policy — CivicLink
+﻿# analytics-policy â€” CivicLink
 
-Services in the **analytics-policy** domain.
+Services in the analytics-policy domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

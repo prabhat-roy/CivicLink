@@ -1,8 +1,8 @@
-# sms-service
+﻿# sms-service
 
 SMS dispatch
 
-**Domain:** ``notifications`` · **Language:** go · **Port:** 50321
+Domain: ``notifications`` Â· Language: go Â· Port: 50321
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/notifications/sms-service.proto](../../../proto/notifications/sms-service.proto) — gRPC contract
-- [helm/charts/sms-service/](../../../helm/charts/sms-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/notifications/sms-service.proto](../../../proto/notifications/sms-service.proto) â€” gRPC contract
+- [helm/charts/sms-service/](../../../helm/charts/sms-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

@@ -1,8 +1,8 @@
-# benefit-service
+﻿# benefit-service
 
 Benefit enrolment + lifecycle
 
-**Domain:** ``social-welfare`` · **Language:** java · **Port:** 50140
+Domain: ``social-welfare`` Â· Language: java Â· Port: 50140
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/social-welfare/benefit-service.proto](../../../proto/social-welfare/benefit-service.proto) — gRPC contract
-- [helm/charts/benefit-service/](../../../helm/charts/benefit-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/social-welfare/benefit-service.proto](../../../proto/social-welfare/benefit-service.proto) â€” gRPC contract
+- [helm/charts/benefit-service/](../../../helm/charts/benefit-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

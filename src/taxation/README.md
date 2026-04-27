@@ -1,6 +1,6 @@
-# taxation — CivicLink
+﻿# taxation â€” CivicLink
 
-Services in the **taxation** domain.
+Services in the taxation domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

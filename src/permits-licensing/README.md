@@ -1,6 +1,6 @@
-# permits-licensing — CivicLink
+﻿# permits-licensing â€” CivicLink
 
-Services in the **permits-licensing** domain.
+Services in the permits-licensing domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

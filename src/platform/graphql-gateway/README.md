@@ -1,8 +1,8 @@
-# graphql-gateway
+﻿# graphql-gateway
 
 Federated GraphQL across services
 
-**Domain:** ``platform`` · **Language:** go · **Port:** 50004
+Domain: ``platform`` Â· Language: go Â· Port: 50004
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/platform/graphql-gateway.proto](../../../proto/platform/graphql-gateway.proto) — gRPC contract
-- [helm/charts/graphql-gateway/](../../../helm/charts/graphql-gateway/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/platform/graphql-gateway.proto](../../../proto/platform/graphql-gateway.proto) â€” gRPC contract
+- [helm/charts/graphql-gateway/](../../../helm/charts/graphql-gateway/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

@@ -1,8 +1,8 @@
-# survey-service
+﻿# survey-service
 
 Citizen feedback surveys
 
-**Domain:** ``grievance`` · **Language:** node · **Port:** 50223
+Domain: ``grievance`` Â· Language: node Â· Port: 50223
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/grievance/survey-service.proto](../../../proto/grievance/survey-service.proto) — gRPC contract
-- [helm/charts/survey-service/](../../../helm/charts/survey-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/grievance/survey-service.proto](../../../proto/grievance/survey-service.proto) â€” gRPC contract
+- [helm/charts/survey-service/](../../../helm/charts/survey-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

@@ -1,8 +1,8 @@
-# traffic-violation
+﻿# traffic-violation
 
 Traffic violation challan
 
-**Domain:** ``public-safety`` · **Language:** java · **Port:** 50202
+Domain: ``public-safety`` Â· Language: java Â· Port: 50202
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/public-safety/traffic-violation.proto](../../../proto/public-safety/traffic-violation.proto) — gRPC contract
-- [helm/charts/traffic-violation/](../../../helm/charts/traffic-violation/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/public-safety/traffic-violation.proto](../../../proto/public-safety/traffic-violation.proto) â€” gRPC contract
+- [helm/charts/traffic-violation/](../../../helm/charts/traffic-violation/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

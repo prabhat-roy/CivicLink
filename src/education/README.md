@@ -1,6 +1,6 @@
-# education — CivicLink
+﻿# education â€” CivicLink
 
-Services in the **education** domain.
+Services in the education domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

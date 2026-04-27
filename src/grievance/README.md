@@ -1,6 +1,6 @@
-# grievance — CivicLink
+﻿# grievance â€” CivicLink
 
-Services in the **grievance** domain.
+Services in the grievance domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

@@ -1,6 +1,6 @@
-# public-safety — CivicLink
+﻿# public-safety â€” CivicLink
 
-Services in the **public-safety** domain.
+Services in the public-safety domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

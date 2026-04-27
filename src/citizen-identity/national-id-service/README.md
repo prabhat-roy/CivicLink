@@ -1,8 +1,8 @@
-# national-id-service
+﻿# national-id-service
 
 National ID issuance + lifecycle
 
-**Domain:** ``citizen-identity`` · **Language:** java · **Port:** 50040
+Domain: ``citizen-identity`` Â· Language: java Â· Port: 50040
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/citizen-identity/national-id-service.proto](../../../proto/citizen-identity/national-id-service.proto) — gRPC contract
-- [helm/charts/national-id-service/](../../../helm/charts/national-id-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/citizen-identity/national-id-service.proto](../../../proto/citizen-identity/national-id-service.proto) â€” gRPC contract
+- [helm/charts/national-id-service/](../../../helm/charts/national-id-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

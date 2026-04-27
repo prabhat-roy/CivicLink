@@ -1,6 +1,6 @@
-# notifications — CivicLink
+﻿# notifications â€” CivicLink
 
-Services in the **notifications** domain.
+Services in the notifications domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

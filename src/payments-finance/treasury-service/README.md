@@ -1,8 +1,8 @@
-# treasury-service
+﻿# treasury-service
 
 Government treasury
 
-**Domain:** ``payments-finance`` · **Language:** go · **Port:** 50241
+Domain: ``payments-finance`` Â· Language: go Â· Port: 50241
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/payments-finance/treasury-service.proto](../../../proto/payments-finance/treasury-service.proto) — gRPC contract
-- [helm/charts/treasury-service/](../../../helm/charts/treasury-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/payments-finance/treasury-service.proto](../../../proto/payments-finance/treasury-service.proto) â€” gRPC contract
+- [helm/charts/treasury-service/](../../../helm/charts/treasury-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

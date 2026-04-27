@@ -1,6 +1,6 @@
-# inter-agency — CivicLink
+﻿# inter-agency â€” CivicLink
 
-Services in the **inter-agency** domain.
+Services in the inter-agency domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

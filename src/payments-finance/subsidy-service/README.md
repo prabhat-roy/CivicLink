@@ -1,8 +1,8 @@
-# subsidy-service
+﻿# subsidy-service
 
 Subsidy disbursement
 
-**Domain:** ``payments-finance`` · **Language:** go · **Port:** 50242
+Domain: ``payments-finance`` Â· Language: go Â· Port: 50242
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/payments-finance/subsidy-service.proto](../../../proto/payments-finance/subsidy-service.proto) — gRPC contract
-- [helm/charts/subsidy-service/](../../../helm/charts/subsidy-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/payments-finance/subsidy-service.proto](../../../proto/payments-finance/subsidy-service.proto) â€” gRPC contract
+- [helm/charts/subsidy-service/](../../../helm/charts/subsidy-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

@@ -1,8 +1,8 @@
-# federated-query
+﻿# federated-query
 
 Cross-agency federated query
 
-**Domain:** ``inter-agency`` · **Language:** go · **Port:** 50283
+Domain: ``inter-agency`` Â· Language: go Â· Port: 50283
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/inter-agency/federated-query.proto](../../../proto/inter-agency/federated-query.proto) — gRPC contract
-- [helm/charts/federated-query/](../../../helm/charts/federated-query/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/inter-agency/federated-query.proto](../../../proto/inter-agency/federated-query.proto) â€” gRPC contract
+- [helm/charts/federated-query/](../../../helm/charts/federated-query/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

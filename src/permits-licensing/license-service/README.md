@@ -1,8 +1,8 @@
-# license-service
+﻿# license-service
 
 Driving, professional, business licences
 
-**Domain:** ``permits-licensing`` · **Language:** java · **Port:** 50081
+Domain: ``permits-licensing`` Â· Language: java Â· Port: 50081
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/permits-licensing/license-service.proto](../../../proto/permits-licensing/license-service.proto) — gRPC contract
-- [helm/charts/license-service/](../../../helm/charts/license-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/permits-licensing/license-service.proto](../../../proto/permits-licensing/license-service.proto) â€” gRPC contract
+- [helm/charts/license-service/](../../../helm/charts/license-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

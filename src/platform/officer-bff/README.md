@@ -1,8 +1,8 @@
-# officer-bff
+﻿# officer-bff
 
 BFF for officer dashboard (React)
 
-**Domain:** ``platform`` · **Language:** go · **Port:** 50002
+Domain: ``platform`` Â· Language: go Â· Port: 50002
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/platform/officer-bff.proto](../../../proto/platform/officer-bff.proto) — gRPC contract
-- [helm/charts/officer-bff/](../../../helm/charts/officer-bff/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/platform/officer-bff.proto](../../../proto/platform/officer-bff.proto) â€” gRPC contract
+- [helm/charts/officer-bff/](../../../helm/charts/officer-bff/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

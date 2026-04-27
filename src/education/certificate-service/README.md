@@ -1,8 +1,8 @@
-# certificate-service
+﻿# certificate-service
 
 Educational certificate issuance
 
-**Domain:** ``education`` · **Language:** java · **Port:** 50183
+Domain: ``education`` Â· Language: java Â· Port: 50183
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/education/certificate-service.proto](../../../proto/education/certificate-service.proto) — gRPC contract
-- [helm/charts/certificate-service/](../../../helm/charts/certificate-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/education/certificate-service.proto](../../../proto/education/certificate-service.proto) â€” gRPC contract
+- [helm/charts/certificate-service/](../../../helm/charts/certificate-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

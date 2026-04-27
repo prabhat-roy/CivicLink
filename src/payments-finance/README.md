@@ -1,6 +1,6 @@
-# payments-finance — CivicLink
+﻿# payments-finance â€” CivicLink
 
-Services in the **payments-finance** domain.
+Services in the payments-finance domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

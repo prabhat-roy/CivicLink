@@ -1,8 +1,8 @@
-# eligibility-engine
+﻿# eligibility-engine
 
 Rules+ML eligibility determination
 
-**Domain:** ``social-welfare`` · **Language:** python · **Port:** 50141
+Domain: ``social-welfare`` Â· Language: python Â· Port: 50141
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/social-welfare/eligibility-engine.proto](../../../proto/social-welfare/eligibility-engine.proto) — gRPC contract
-- [helm/charts/eligibility-engine/](../../../helm/charts/eligibility-engine/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/social-welfare/eligibility-engine.proto](../../../proto/social-welfare/eligibility-engine.proto) â€” gRPC contract
+- [helm/charts/eligibility-engine/](../../../helm/charts/eligibility-engine/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

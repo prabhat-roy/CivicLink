@@ -1,6 +1,6 @@
-# civil-registration — CivicLink
+﻿# civil-registration â€” CivicLink
 
-Services in the **civil-registration** domain.
+Services in the civil-registration domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

@@ -1,8 +1,8 @@
-# property-valuation
+﻿# property-valuation
 
 Government property valuation
 
-**Domain:** ``land-property`` · **Language:** java · **Port:** 50101
+Domain: ``land-property`` Â· Language: java Â· Port: 50101
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/land-property/property-valuation.proto](../../../proto/land-property/property-valuation.proto) — gRPC contract
-- [helm/charts/property-valuation/](../../../helm/charts/property-valuation/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/land-property/property-valuation.proto](../../../proto/land-property/property-valuation.proto) â€” gRPC contract
+- [helm/charts/property-valuation/](../../../helm/charts/property-valuation/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

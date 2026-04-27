@@ -1,8 +1,8 @@
-# escalation-service
+﻿# escalation-service
 
 SLA-driven escalation
 
-**Domain:** ``grievance`` · **Language:** go · **Port:** 50221
+Domain: ``grievance`` Â· Language: go Â· Port: 50221
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/grievance/escalation-service.proto](../../../proto/grievance/escalation-service.proto) — gRPC contract
-- [helm/charts/escalation-service/](../../../helm/charts/escalation-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/grievance/escalation-service.proto](../../../proto/grievance/escalation-service.proto) â€” gRPC contract
+- [helm/charts/escalation-service/](../../../helm/charts/escalation-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

@@ -1,6 +1,6 @@
-# public-health — CivicLink
+﻿# public-health â€” CivicLink
 
-Services in the **public-health** domain.
+Services in the public-health domain.
 
 | Service | Language | gRPC port | Description |
 |---|---|---|---|

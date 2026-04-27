@@ -1,8 +1,8 @@
-# data-retention
+﻿# data-retention
 
 Retention policy enforcement
 
-**Domain:** ``audit-compliance`` · **Language:** go · **Port:** 50341
+Domain: ``audit-compliance`` Â· Language: go Â· Port: 50341
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/audit-compliance/data-retention.proto](../../../proto/audit-compliance/data-retention.proto) — gRPC contract
-- [helm/charts/data-retention/](../../../helm/charts/data-retention/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/audit-compliance/data-retention.proto](../../../proto/audit-compliance/data-retention.proto) â€” gRPC contract
+- [helm/charts/data-retention/](../../../helm/charts/data-retention/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

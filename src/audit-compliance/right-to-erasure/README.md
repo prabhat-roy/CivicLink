@@ -1,8 +1,8 @@
-# right-to-erasure
+﻿# right-to-erasure
 
 GDPR Article 17 erasure workflow
 
-**Domain:** ``audit-compliance`` · **Language:** go · **Port:** 50342
+Domain: ``audit-compliance`` Â· Language: go Â· Port: 50342
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/audit-compliance/right-to-erasure.proto](../../../proto/audit-compliance/right-to-erasure.proto) — gRPC contract
-- [helm/charts/right-to-erasure/](../../../helm/charts/right-to-erasure/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/audit-compliance/right-to-erasure.proto](../../../proto/audit-compliance/right-to-erasure.proto) â€” gRPC contract
+- [helm/charts/right-to-erasure/](../../../helm/charts/right-to-erasure/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

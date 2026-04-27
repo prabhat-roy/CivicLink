@@ -1,8 +1,8 @@
-# death-registration
+﻿# death-registration
 
 Death certificate issuance
 
-**Domain:** ``civil-registration`` · **Language:** java · **Port:** 50061
+Domain: ``civil-registration`` Â· Language: java Â· Port: 50061
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/civil-registration/death-registration.proto](../../../proto/civil-registration/death-registration.proto) — gRPC contract
-- [helm/charts/death-registration/](../../../helm/charts/death-registration/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/civil-registration/death-registration.proto](../../../proto/civil-registration/death-registration.proto) â€” gRPC contract
+- [helm/charts/death-registration/](../../../helm/charts/death-registration/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

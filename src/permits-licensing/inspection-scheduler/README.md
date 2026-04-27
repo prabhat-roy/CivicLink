@@ -1,8 +1,8 @@
-# inspection-scheduler
+﻿# inspection-scheduler
 
 Inspection scheduling + assignment
 
-**Domain:** ``permits-licensing`` · **Language:** go · **Port:** 50083
+Domain: ``permits-licensing`` Â· Language: go Â· Port: 50083
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/permits-licensing/inspection-scheduler.proto](../../../proto/permits-licensing/inspection-scheduler.proto) — gRPC contract
-- [helm/charts/inspection-scheduler/](../../../helm/charts/inspection-scheduler/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/permits-licensing/inspection-scheduler.proto](../../../proto/permits-licensing/inspection-scheduler.proto) â€” gRPC contract
+- [helm/charts/inspection-scheduler/](../../../helm/charts/inspection-scheduler/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

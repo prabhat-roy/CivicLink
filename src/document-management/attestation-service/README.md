@@ -1,8 +1,8 @@
-# attestation-service
+﻿# attestation-service
 
 Document attestation
 
-**Domain:** ``document-management`` · **Language:** go · **Port:** 50262
+Domain: ``document-management`` Â· Language: go Â· Port: 50262
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/document-management/attestation-service.proto](../../../proto/document-management/attestation-service.proto) — gRPC contract
-- [helm/charts/attestation-service/](../../../helm/charts/attestation-service/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/document-management/attestation-service.proto](../../../proto/document-management/attestation-service.proto) â€” gRPC contract
+- [helm/charts/attestation-service/](../../../helm/charts/attestation-service/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

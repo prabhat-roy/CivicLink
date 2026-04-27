@@ -1,8 +1,8 @@
-# birth-registration
+﻿# birth-registration
 
 Birth certificate issuance
 
-**Domain:** ``civil-registration`` · **Language:** java · **Port:** 50060
+Domain: ``civil-registration`` Â· Language: java Â· Port: 50060
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/civil-registration/birth-registration.proto](../../../proto/civil-registration/birth-registration.proto) — gRPC contract
-- [helm/charts/birth-registration/](../../../helm/charts/birth-registration/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/civil-registration/birth-registration.proto](../../../proto/civil-registration/birth-registration.proto) â€” gRPC contract
+- [helm/charts/birth-registration/](../../../helm/charts/birth-registration/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview

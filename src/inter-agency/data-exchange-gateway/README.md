@@ -1,8 +1,8 @@
-# data-exchange-gateway
+﻿# data-exchange-gateway
 
 Inter-agency federation gateway
 
-**Domain:** ``inter-agency`` · **Language:** go · **Port:** 50281
+Domain: ``inter-agency`` Â· Language: go Â· Port: 50281
 
 ## Run locally
 
@@ -12,10 +12,10 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [proto/inter-agency/data-exchange-gateway.proto](../../../proto/inter-agency/data-exchange-gateway.proto) — gRPC contract
-- [helm/charts/data-exchange-gateway/](../../../helm/charts/data-exchange-gateway/) — Helm chart (added in next wave)
-- [../README.md](../README.md) — domain overview
+- [proto/inter-agency/data-exchange-gateway.proto](../../../proto/inter-agency/data-exchange-gateway.proto) â€” gRPC contract
+- [helm/charts/data-exchange-gateway/](../../../helm/charts/data-exchange-gateway/) â€” Helm chart (added in next wave)
+- [../README.md](../README.md) â€” domain overview
