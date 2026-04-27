@@ -160,7 +160,7 @@ ai-platform/
 - Vector DBs sharded per state/UT â€” no cross-state retrieval.
 - Training data lake in MinIO, encrypted at rest with Vault Transit.
 - Every prompt + completion goes to Langfuse and Paperclip with the
-  citizen-ID *hashed* (not raw).
+  citizen-ID hashed (not raw).
 
 ---
 
